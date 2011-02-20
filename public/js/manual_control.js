@@ -21,11 +21,6 @@ function ManualControl(app){
     app.command(this.command)
   }
 
-  this.stop_turn = function(){
-    this.command.turn = 0
-    app.command(this.command)
-  }
-
   this.turn_left = function(){
     this.command.turn = this.command.move < 0 ? 1 : -1;
     app.command(this.command)
@@ -33,6 +28,11 @@ function ManualControl(app){
 
   this.turn_right = function(){
     this.command.turn = this.command.move >= 0 ? 1 : -1;
+    app.command(this.command)
+  }
+
+  this.stop_turn = function(){
+    this.command.turn = 0
     app.command(this.command)
   }
 
